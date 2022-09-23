@@ -1,0 +1,43 @@
+<html>
+<head>
+   
+<title>Clientes datos</title>
+</head>
+<body>
+    
+    <h1>
+    Clientes datos
+
+</h1>{% block content %}
+<form action="buscar" method="POST">{% csrf_token %}
+    <p>nombre: <input type="text" name="nombre"></p>
+    <input type="submit" value="Enviar">
+    </form>
+    {% if Facturas %}
+    {% for Facturas in Facturas %}
+        <li>{{Facturas.fecha_de_emision}}</li>
+        <li>{{Facturas.nombre}}</li>
+        <li>{{Facturas.link}}</li>
+        {% endfor %}
+        <li>tipo: Facturas</li>
+    {%endif%}
+    {%if recibos %}
+    {% for recibos in recibos %}
+        <li>{{recibos.fecha_de_emision}}</li>
+        <li>{{recibos.nombre}}</li>
+        <li>{{recibos.link}}</li>
+    {% endfor %}
+        <li>tipo: recibos</li>
+    {%endif%}
+    {% if reclamos %}
+    {% for reclamos in reclamos %}
+        <li>{{reclamos.fecha_de_emision}}</li>
+        <li>{{reclamos.nombre}}</li>
+        <li>{{reclamos.link}}</li>
+        {% endfor %}
+        <li>tipo: reclamos</li>
+        {%endif%}
+    {% endblock %}
+    </body>
+    <h3>https://github.com/YulianaD</h3>
+</html>

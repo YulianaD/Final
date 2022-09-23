@@ -1,0 +1,16 @@
+{% extends "buscar.html" %}
+<head>
+    </head>
+    <body>
+    <h1>
+    Clientes datos
+    </h1>{% block content %}
+    <form action="insertar_clientes" method="POST">{% csrf_token %}
+        <p>fecha_de_emision: <input type="text" name="fecha_de_emision"></p>
+        <p>nombre: <input type="text" name="nombre"></p>
+        <p>link <input type="text" name="link"></p>
+        <input type="submit" value="Enviar">
+    
+        </form>
+        {% endblock %}
+        </html>
